@@ -4,16 +4,20 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import './Nav.css';
+import logo from '../Assets/logo.png'
 
 const NavBar = () => {
   return (
     <div>
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar className="bg-body-tertiary">
       <Container>
+      <Navbar.Brand>
+        <img src={logo} alt='logo' />
+      </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link className='active' href="#home">Home</Nav.Link>
             <NavDropdown title="Pages" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">About</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Our Team</NavDropdown.Item>
@@ -38,7 +42,10 @@ const NavBar = () => {
             <Nav.Link href="#contact"><i class="fa-solid fa-phone"></i></Nav.Link>
             <Nav.Link href="#contact">(+01) 999 888 777</Nav.Link>
             <Nav.Link>
-               <button>contact us <i class="fa-solid fa-arrow-right"></i></button>
+               <button>contact us <span> > </span> </button>
+            </Nav.Link>
+            <Nav.Link>
+              {/* <i class="fa-solid fa-magnifying-glass"></i> */}
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
